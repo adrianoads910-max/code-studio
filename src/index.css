@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  /* 🎨 Paleta de cores extraída da logo <codestudio/> */
+  --color-brand-background: #1A1A2E; /* Fundo escuro do design */
+  --color-brand-blue: #4F46E5;       /* Azul vibrante do gradiente */
+  --color-brand-purple: #9333EA;    /* Roxo/Violeta do gradiente */
+  --color-brand-accent: #22D3EE;     /* Ciano brilhante da barra central */
+  --color-brand-text: #FFFFFF;       /* Branco do texto "<codestudio/>" */
+}
