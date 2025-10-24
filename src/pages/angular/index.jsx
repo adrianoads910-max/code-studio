@@ -1,13 +1,14 @@
 import { Footer } from "../../components/footer"
 import { Navbar } from "../../components/navbar"
 
-export const HtmlPage = () => {
+export const AngularPage = () => {
     return (
         <main>
-           <Navbar /> 
-           <footer>
+            <Navbar />
+
+            <footer>
                 <Footer/>
-           </footer>
+            </footer> 
         </main>
     )
 }
