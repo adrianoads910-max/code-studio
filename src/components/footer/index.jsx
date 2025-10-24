@@ -1,6 +1,7 @@
 import { Linkedin } from "lucide-react";
 import { Github } from "lucide-react";
 import { Instagram, Facebook, PhoneCall, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -8,11 +9,10 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 text-center flex flex-col items-center gap-6">
 
         {/* ✅ Logo */}
-        <img
-          src="./codestudio_logo.png"
-          alt="<codestudio/>"
-          className="h-20 w-auto opacity-90 rounded-4xl"
-        />
+       
+        <Link to="/" className="flex items-center gap-2">
+          <img src="./codestudio_logo.png" alt="<codestudio/>" className="h-20 w-auto opacity-90 rounded-4xl" />
+        </Link>
 
         {/* ✅ Endereço com link Google Maps */}
         <p className="flex items-center gap-2 text-brand-metal-medium">
@@ -22,7 +22,7 @@ export const Footer = () => {
             target="_blank"
             className="hover:underline"
           >
-            Acesse nosso repositorio no GitHub
+            Acesse nosso repositorio no GitHub e deixe sua contribuição
           </a>
         </p>
 
