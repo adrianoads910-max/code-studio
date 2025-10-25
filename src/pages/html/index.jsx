@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Button } from "../../components/button"
 import { CodeEditor } from "../../components/codeeditor/codeeditor";
 import { Footer } from "../../components/footer";
+import { Link } from "react-router-dom";
 import { Navbar } from "../../components/navbar";
 import {
   Code,
@@ -637,7 +639,375 @@ export const HtmlPage = () => {
         </pre>
         </section>
             
+        <section className="mb-10">
+        <h2 className="text-2xl font-bold flex items-center gap-2 text-brand-blue-dark mb-4">
+            🎨 Cores no CSS
+        </h2>
 
+        <p className="text-lg mb-4">
+            No HTML, podemos aplicar cores utilizando CSS — seja diretamente na tag 
+            (com o atributo <strong>style</strong>) ou usando uma folha de estilo externa.
+            Podemos alterar a cor do texto (<code>color</code>) ou do fundo (<code>background-color</code>).
+        </p>
+
+        <h3 className="font-semibold mb-2">✅ Exemplo prático:</h3>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`<!DOCTYPE html>
+        <html>
+        <body>
+        <div style="background-color:Tomato;">
+            <h1 style="color:blue;">A Blue Heading</h1>
+            <p style="color:red;">A red paragraph.</p>
+        </div>
+        </body>
+        </html>`}
+        </pre>
+
+        <h3 className="mt-6 font-semibold text-lg">🎯 Como as cores podem ser escritas no CSS?</h3>
+        <ul className="space-y-2">
+            <li>✔ <strong>Nome da cor:</strong> <code>red</code>, <code>blue</code>, <code>tomato</code></li>
+            <li>✔ <strong>Hexadecimal:</strong> <code>#FF5733</code> (mais usado no design)</li>
+            <li>✔ <strong>RGB:</strong> <code>rgb(255, 99, 71)</code></li>
+            <li>✔ <strong>RGBA (com transparência):</strong> <code>rgba(255, 99, 71, 0.5)</code></li>
+            <li>✔ <strong>HSL:</strong> <code>hsl(9, 100%, 64%)</code></li>
+        </ul>
+
+        <h3 className="mt-6 font-semibold text-lg">🌈 Exemplos de diferentes formatos:</h3>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`<p style="color:tomato;">Cor por nome</p>
+        <p style="color:#ff6347;">Cor Hexadecimal</p>
+        <p style="color:rgb(255, 99, 71);">Cor RGB</p>
+        <p style="color:rgba(255, 99, 71, 0.5);">RGB com transparência</p>
+        <p style="color:hsl(9, 100%, 64%);">Cor usando HSL</p>`}
+        </pre>
+
+        <p className="mt-4 text-md">
+            💡 <strong>Dica:</strong> Evite usar o atributo <code>style=""</code> diretamente no HTML. 
+            O ideal é separar o CSS em um arquivo próprio para manter o código organizado.
+        </p>
+        </section>
+
+        <section className="mb-10">
+        <h2 className="text-2xl font-bold flex items-center gap-2 text-brand-blue-dark mb-4">
+            🎨 Border e Background no CSS
+        </h2>
+
+        <p className="text-lg mb-4">
+            Além de colorir textos, o CSS também permite modificar o <strong>fundo</strong> de elementos 
+            com <code>background-color</code> e criar bordas com <code>border</code>.
+        </p>
+
+        {/* EXEMPLO VISUAL INLINE */}
+        <h3 className="font-semibold mb-2">✅ Exemplo prático com background e border:</h3>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`<!DOCTYPE html>
+        <html>
+        <body>
+
+        <div style="background-color: lightblue; border: 2px solid navy; padding: 10px;">
+        <h2 style="color: darkblue;">Título com borda</h2>
+        <p style="color: darkred;">Parágrafo com fundo azul claro.</p>
+        </div>
+
+        </body>
+        </html>`}
+        </pre>
+
+        {/* BORDER EXPLICAÇÃO */}
+        <h3 className="mt-6 font-semibold text-lg">📌 Como funciona a propriedade <code>border</code>?</h3>
+        <p className="text-lg mb-3">A sintaxe básica é:</p>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`border: [largura] [estilo] [cor];`}
+        </pre>
+
+        <ul className="space-y-2">
+            <li>✔ <strong>Largura:</strong> 1px, 2px, 5px...</li>
+            <li>✔ <strong>Estilo:</strong> solid, dashed, dotted, double</li>
+            <li>✔ <strong>Cor:</strong> red, #000, rgb(0,0,0)</li>
+        </ul>
+
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm mt-4">
+        {`div {
+        border: 3px dashed #ff4500; /* laranja tracejado */
+        }`}
+        </pre>
+
+        {/* BACKGROUND COLOR */}
+        <h3 className="mt-6 font-semibold text-lg">🎨 Como funciona o <code>background-color</code>?</h3>
+        <p className="text-lg mb-3">
+            Essa propriedade altera a cor do fundo de qualquer elemento HTML:
+        </p>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`body {
+        background-color: #f0f0f0;
+        }
+
+        div {
+        background-color: rgba(255, 99, 71, 0.3); /* Tomato com transparência */
+        }`}
+        </pre>
+
+        {/* DICA */}
+        <p className="mt-4 text-md">
+            💡 <strong>Dica:</strong> você pode combinar background e border juntos para criar cartões, caixas de destaque, botões e muito mais.
+        </p>
+        </section>
+
+
+        <section className="mb-10">
+        <h2 className="text-2xl font-bold flex items-center gap-2 text-brand-blue-dark mb-4">
+            🎨 Ligando CSS ao HTML (Arquivo Externo)
+        </h2>
+
+        <p className="text-lg mb-4">
+            Em vez de usar estilos diretamente nas tags com o atributo 
+            <code>style=""</code>, o ideal é criar um arquivo CSS separado e 
+            vinculá-lo (linkar) ao HTML. Isso deixa o código mais organizado e 
+            profissional.
+        </p>
+
+        <h3 className="font-semibold mb-2">✅ 1. Estrutura recomendada de arquivos:</h3>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`📁 projeto/
+        ├── index.html
+        ├── styles.css
+        `}
+        </pre>
+
+        <h3 className="mt-6 font-semibold">✅ 2. Dentro do HTML, use a tag &lt;link&gt;:</h3>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`<!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+        <meta charset="UTF-8">
+        <title>Meu Site</title>
+        <link rel="stylesheet" href="styles.css"> <!-- ✅ Link do CSS -->
+        </head>
+        <body>
+        <h1>Olá, mundo!</h1>
+        <p>Este é um exemplo com CSS externo.</p>
+        </body>
+        </html>`}
+        </pre>
+
+        <h3 className="mt-6 font-semibold">✅ 3. E no arquivo styles.css:</h3>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`body {
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+        }
+
+        h1 {
+        color: blue;
+        }
+
+        p {
+        color: red;
+        }`}
+        </pre>
+
+        <p className="mt-4">
+            💡 <strong>Dica:</strong> a tag <code>&lt;link&gt;</code> sempre deve ser 
+            colocada dentro do <code>&lt;head&gt;</code> do HTML. Isso garante que o 
+            CSS seja carregado antes do conteúdo aparecer na tela.
+        </p>
+        </section>
+
+        <section className="mb-10">
+        <h2 className="text-2xl font-bold flex items-center gap-2 text-brand-blue-dark mb-4">
+            ⚙️ Conectando JavaScript com HTML
+        </h2>
+
+        <p className="text-lg mb-4">
+            O JavaScript é a linguagem que adiciona interatividade às páginas web. 
+            Assim como o CSS, ele pode ser inserido de três formas principais:
+        </p>
+
+        {/* ✅ 1. JavaScript Inline */}
+        <h3 className="font-semibold text-lg mt-4">✅ 1. JavaScript Inline (dentro da tag)</h3>
+        <p>Usado para ações simples, direto no HTML:</p>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`<button onclick="alert('Olá!')">Clique aqui</button>`}
+        </pre>
+        <h3 className="font-semibold text-lg mt-4">Exemplo:</h3>
+        
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`<h1>My First JavaScript</h1>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>`}
+        </pre>
+
+
+
+
+        {/* ✅ 2. JavaScript Interno */}
+        <h3 className="font-semibold text-lg mt-6">✅ 2. JavaScript Interno (dentro do HTML)</h3>
+        <p>Inserido dentro da tag <code>&lt;script&gt;</code> no final do <strong>body</strong>:</p>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`<!DOCTYPE html>
+        <html>
+        <body>
+        <h1>Exemplo</h1>
+        <button id="btn">Clique</button>
+
+        <script>
+            document.getElementById("btn").onclick = function() {
+            alert("Você clicou no botão!");
+            };
+        </script>
+        </body>
+        </html>`}
+        </pre>
+
+        {/* ✅ 3. JavaScript Externo */}
+        <h3 className="font-semibold text-lg mt-6">✅ 3. JavaScript Externo (em outro arquivo)</h3>
+        <p>É a forma mais profissional — o JS fica em um arquivo separado:</p>
+
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`📁 projeto/
+        ├── index.html
+        ├── script.js  <-- arquivo JavaScript
+        `}
+        </pre>
+
+        <h4 className="font-semibold mt-4">📄 index.html</h4>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`<!DOCTYPE html>
+        <html>
+        <body>
+        <h1>JavaScript Externo</h1>
+        <button id="btn">Mostrar Alerta</button>
+        <script src="script.js"></script> <!-- ✅ Conectando o JS -->
+        </body>
+        </html>`}
+        </pre>
+
+        <h4 className="font-semibold mt-4">📄 script.js</h4>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`document.getElementById("btn").addEventListener("click", function() {
+        alert("JavaScript carregado de um arquivo externo!");
+        });`}
+        </pre>
+
+        <p className="mt-4 text-md">
+            💡 <strong>Dica:</strong> Sempre coloque o <code>&lt;script src="script.js"&gt;</code> 
+            no final do <code>&lt;body&gt;</code> — assim o HTML é carregado antes do JavaScript.
+        </p>
+        </section>
+            
+        <section className="mb-10">
+            <h2 className="text-2xl font-bold flex items-center gap-2 text-brand-blue-dark mb-4">
+                🌐 HTML + CSS + JavaScript — Trabalhando Juntos
+            </h2>
+
+            <p className="text-lg mb-4">
+                Para criar páginas web completas, utilizamos três tecnologias que funcionam em perfeita sintonia:
+            </p>
+
+            <ul className="space-y-3">
+                <li>✔ <strong>HTML</strong> — Estrutura e conteúdo da página (texto, imagens, botões);</li>
+                <li>✔ <strong>CSS</strong> — Aparência visual (cores, fontes, layout, responsividade);</li>
+                <li>✔ <strong>JavaScript</strong> — Comportamento e interatividade (cliques, animações, validações, APIs);</li>
+            </ul>
+
+            <h3 className="mt-6 font-semibold text-lg">📌 Exemplo de HTML, CSS e JS funcionando juntos:</h3>
+
+            <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+            {`<!DOCTYPE html>
+            <html lang="pt-BR">
+            <head>
+            <meta charset="UTF-8">
+            <title>Exemplo Completo</title>
+            <link rel="stylesheet" href="styles.css"> <!-- CSS Externo -->
+            </head>
+            <body>
+            <h1 id="titulo">Bem-vindo!</h1>
+            <button id="botao">Clique em mim</button>
+
+            <script src="script.js"></script> <!-- JavaScript Externo -->
+            </body>
+            </html>`}
+            </pre>
+
+            <h4 className="mt-4 font-semibold">📁 styles.css:</h4>
+            <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+            {`body {
+            text-align: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            }
+
+            h1 {
+            color: #007bff;
+            }
+
+            button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            }
+
+            button:hover {
+            background-color: #0056b3;
+            }`}
+            </pre>
+
+            <h4 className="mt-4 font-semibold">📁 script.js:</h4>
+            <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+            {`document.getElementById("botao").addEventListener("click", function() {
+            document.getElementById("titulo").textContent = "Você clicou no botão!";
+            });`}
+            </pre>
+
+            <p className="mt-4 text-md">
+                💡 <strong>Resumo:</strong> HTML cria a estrutura, CSS embeleza e JavaScript dá vida à página.
+                Juntos, eles formam a base de qualquer site ou aplicativo web moderno.
+            </p>
+            </section>
+
+            <section className="mb-16 p-6 bg-white/70 rounded-xl shadow-md">
+            <h2 className="text-2xl font-bold flex items-center gap-2 text-brand-blue-dark mb-4">
+                ✅ Conclusão: Como tudo se conecta
+            </h2>
+
+            <p className="text-lg mb-4">
+                Ao longo deste módulo, aprendemos que uma página web é construída a partir da 
+                combinação de três tecnologias principais:
+            </p>
+
+            <ul className="space-y-3">
+                <li>✔ <strong>HTML</strong> — É a base da página. Define <em>o que</em> aparece: textos, imagens, formulários, tabelas e estrutura semântica.</li>
+                <li>✔ <strong>CSS</strong> — Controla <em>como</em> tudo é visualizado: cores, fontes, espaçamento, bordas, responsividade e layout.</li>
+                <li>✔ <strong>JavaScript</strong> — Torna a página interativa: cliques, animações, validações de formulário, efeitos dinâmicos e comunicação com servidores.</li>
+            </ul>
+
+            <p className="mt-6 text-md">
+                💡 <strong>A ideia principal:</strong> HTML constrói o conteúdo, CSS deixa bonito e 
+                JavaScript dá movimento. Quando trabalhados em conjunto, eles criam sites modernos, 
+                responsivos e funcionais.
+            </p>
+
+            <p className="mt-4 text-md italic">
+                📚 Este projeto foi pensado para revisar conceitos fundamentais e reforçar meus conhecimentos 
+                em desenvolvimento web com base na prática, visualidade e exemplos reais.
+            </p>
+            
+            </section>
+
+           <section className="flex justify-center p-4">
+            <Link to="/css">
+                <Button variant="primary">Próximo Módulo: CSS</Button>
+            </Link>
+            </section>
+                
         </section>
 
         {/* 💻 COLUNA DIREITA – Editor + Preview */}

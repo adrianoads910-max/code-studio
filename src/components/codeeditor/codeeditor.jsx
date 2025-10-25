@@ -7,7 +7,7 @@ export const CodeEditor = ({ code, onChange }) => {
   return (
     <CodeMirror
       value={code}
-      height="200px"
+      height="400px"
       extensions={[html()]}
       theme={oneDark}
       onChange={(value) => onChange(value)}
