@@ -12,6 +12,8 @@ import { Code2Icon } from "lucide-react";
 import { WallpaperIcon } from "lucide-react";
 import { SquareCheckBigIcon } from "lucide-react";
 import { BookCheckIcon } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "../../components/button";
 
 export const CssPage = () => {
     const [htmlCode, setHtmlCode] = useState(`
@@ -685,6 +687,17 @@ h1 {
         ✅ <strong>Dica:</strong> Você pode combinar <code>:focus</code>, <code>:hover</code>, <code>:valid</code> e <code>:invalid</code> para criar formulários interativos e acessíveis.
         </p>
 
+         <section className="flex justify-center p-4 gap-4">
+            <Link to="/javascript">
+                <Button variant="primary">Próximo Módulo: JavaScript</Button>
+            </Link>
+             <a
+                href="/docs/modulo-html.pdf" // coloque o PDF dentro de /public/arquivos/
+                download="Modulo-HTML.pdf"
+            >
+                <Button variant="primary">📄 Baixar PDF - Módulo CSS</Button>
+            </a>
+            </section>    
 
       </div>
            {/* 💻 COLUNA DIREITA – Editor + Preview */}

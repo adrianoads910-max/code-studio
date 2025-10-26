@@ -44,6 +44,8 @@ export const Navbar = () => {
             <li><Link to="/css" className="px-4 py-3 block hover:bg-brand-purple transition hover:text-amber-50">CSS</Link></li>
             <li><Link to="/javascript" className="px-4 py-3 block hover:bg-brand-purple transition hover:text-amber-50">JAVASCRIPT</Link></li>
             <li><Link to="/react" className="px-4 py-3 block hover:bg-brand-purple transition hover:text-amber-50">REACT</Link></li>
+             <li><Link to="/angular" className="px-4 py-3 block hover:bg-brand-purple transition hover:text-amber-50">ANGULAR</Link></li>
+              <li><Link to="/sql" className="px-4 py-3 block hover:bg-brand-purple transition hover:text-amber-50">SQL</Link></li>
           </ul>
         </div>
       </nav>
@@ -58,6 +60,8 @@ export const Navbar = () => {
             <li><Link onClick={() => setIsMenuOpen(false)} className="text-amber-50 text-xl font-bold block py-2 w-full text-center hover:bg-brand-blue-dark" to="/css">CSS</Link></li>
             <li><Link onClick={() => setIsMenuOpen(false)} className="text-amber-50 text-xl font-bold block py-2 w-full text-center hover:bg-brand-blue-dark" to="/javascript">JAVASCRIPT</Link></li>
             <li><Link onClick={() => setIsMenuOpen(false)} className="text-amber-50 text-xl font-bold block py-2 w-full text-center hover:bg-brand-blue-dark" to="/react">REACT</Link></li>
+            <li><Link onClick={() => setIsMenuOpen(false)} className="text-amber-50 text-xl font-bold block py-2 w-full text-center hover:bg-brand-blue-dark" to="/angular">ANGULAR</Link></li>
+            <li><Link onClick={() => setIsMenuOpen(false)} className="text-amber-50 text-xl font-bold block py-2 w-full text-center hover:bg-brand-blue-dark" to="/sql">SQL</Link></li>
           </ul>
         </div>
       )}

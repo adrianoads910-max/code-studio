@@ -478,6 +478,111 @@ export const HtmlPage = () => {
 
             
         </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold text-yellow-600 mb-3">📁 Criando um Menu de Navegação entre Páginas</h2>
+
+          <p className="text-lg p-2">
+            Um <strong>menu de navegação</strong> permite que o usuário clique e vá para outras páginas do site (como Home, Sobre, Contato etc.).
+            Isso pode ser feito com links simples usando a tag <code>&lt;a&gt;</code>.
+          </p>
+
+          {/* ✅ 1) Estrutura básica do menu */}
+          <h3 className="text-xl font-semibold mt-4 mb-2">✅ 1) Exemplo de menu simples com links</h3>
+          <pre className="bg-gray-900 text-white p-3 rounded-lg text-sm overflow-x-auto">
+        {`<!-- Coloque isso em todas as páginas para navegar entre elas -->
+        <nav>
+          <a href="index.html">🏠 Home</a>
+          <a href="sobre.html">ℹ️ Sobre</a>
+          <a href="contato.html">📞 Contato</a>
+        </nav>
+        <hr />`}
+          </pre>
+
+          {/* ✅ 2) Criando as páginas */}
+          <h3 className="text-xl font-semibold mt-6 mb-2">✅ 2) Estrutura de arquivos do site</h3>
+          <pre className="bg-gray-900 text-white p-3 rounded-lg text-sm overflow-x-auto">
+        {`📁 MeuSite/
+        ├── index.html     → Página principal
+        ├── sobre.html     → Página "Sobre"
+        └── contato.html   → Página de contato`}
+          </pre>
+
+          {/* ✅ 3) Conteúdo da Home (index.html) */}
+          <h3 className="text-xl font-semibold mt-6 mb-2">✅ 3) Exemplo completo — index.html</h3>
+          <pre className="bg-gray-900 text-white p-3 rounded-lg text-sm overflow-x-auto">
+        {`<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <title>Home</title>
+        </head>
+        <body>
+          <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="sobre.html">ℹ️ Sobre</a>
+            <a href="contato.html">📞 Contato</a>
+          </nav>
+          <hr>
+
+          <h1>Bem-vindo ao site!</h1>
+          <p>Esta é a página inicial.</p>
+        </body>
+        </html>`}
+          </pre>
+
+          {/* ✅ 4) Página Sobre (sobre.html) */}
+          <h3 className="text-xl font-semibold mt-6 mb-2">✅ 4) sobre.html</h3>
+          <pre className="bg-gray-900 text-white p-3 rounded-lg text-sm overflow-x-auto">
+        {`<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <title>Sobre</title>
+        </head>
+        <body>
+          <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="sobre.html">ℹ️ Sobre</a>
+            <a href="contato.html">📞 Contato</a>
+          </nav>
+          <hr>
+
+          <h1>Sobre nós</h1>
+          <p>Essa é a página sobre o site.</p>
+        </body>
+        </html>`}
+          </pre>
+
+          {/* ✅ 5) Página Contato (contato.html) */}
+          <h3 className="text-xl font-semibold mt-6 mb-2">✅ 5) contato.html</h3>
+          <pre className="bg-gray-900 text-white p-3 rounded-lg text-sm overflow-x-auto">
+        {`<!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <title>Contato</title>
+        </head>
+        <body>
+          <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="sobre.html">ℹ️ Sobre</a>
+            <a href="contato.html">📞 Contato</a>
+          </nav>
+          <hr>
+
+          <h1>Fale Conosco</h1>
+          <p>Email: exemplo@gmail.com</p>
+        </body>
+        </html>`}
+          </pre>
+
+          {/* ✅ Dica final */}
+          <p className="text-md mt-6">
+            ✅ <strong>Dica:</strong> para deixar esse menu mais bonito, você pode usar CSS ou até adicionar menus com Tailwind, Bootstrap ou React Router em projetos maiores.
+          </p>
+      </section>
+
         {/* ✅ HTML Forms */}
         <section className="mb-10">
         <h2 className="text-2xl font-bold flex items-center gap-2 text-brand-blue-dark mb-4">
@@ -1002,10 +1107,16 @@ Click me to display Date and Time.</button>
             
             </section>
 
-           <section className="flex justify-center p-4">
+           <section className="flex justify-center p-4 gap-4">
             <Link to="/css">
                 <Button variant="primary">Próximo Módulo: CSS</Button>
             </Link>
+             <a
+                href="/docs/modulo-html.pdf" // coloque o PDF dentro de /public/arquivos/
+                download="Modulo-HTML.pdf"
+            >
+                <Button variant="primary">📄 Baixar PDF - Módulo HTML</Button>
+            </a>
             </section>
                 
         </section>

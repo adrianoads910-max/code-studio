@@ -6,6 +6,7 @@ import { CssPage } from "./pages/css"
 import { JavascriptPage } from "./pages/javascript"
 import { ReactPage } from "./pages/react"
 import { AngularPage } from "./pages/angular"
+import { SqlPage } from "./pages/sql"
 
 
 
@@ -25,6 +26,7 @@ const App = () => {
           <Route path='/javascript' element={<JavascriptPage />} />
           <Route path='/react' element={<ReactPage />} />
           <Route path='/angular' element={<AngularPage />} />
+          <Route path='/sql' element={<SqlPage />} />
         </Routes>
       </BrowserRouter>
     
