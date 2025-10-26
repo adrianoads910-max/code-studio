@@ -14,89 +14,57 @@ import { SquareCheckBigIcon } from "lucide-react";
 import { BookCheckIcon } from "lucide-react";
 
 export const CssPage = () => {
-    const [htmlCode, setHtmlCode] = useState(`<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSS Playground</title>
-  <style>
-    /* 🔹 CSS de exemplo — sinta-se à vontade para editar no editor ao lado */
+    const [htmlCode, setHtmlCode] = useState(`
+    <div class="container">
+        <span class="badge">CSS</span>
+        <h1>Olá com CSS!</h1>
+        <p>Edite o CSS no editor para ver mudanças ao vivo.</p>
+        <button class="btn">Botão estiloso</button>
+    </div>
+    `);
+
+    const [cssCode, setCssCode] = useState(`
     :root {
-      --brand: #2563eb;
-      --bg: #f8fafc;
-      --text: #0f172a;
+        --brand: #2563eb;
+        --bg: #f8fafc;
+        --text: #0f172a;
     }
 
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: var(--bg);
-      color: var(--text);
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
     }
 
     .container {
-      max-width: 640px;
-      margin: 2rem auto;
-      padding: 1.25rem;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+        max-width: 640px;
+        margin: 2rem auto;
+        padding: 1.25rem;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     }
 
     h1 {
-      color: var(--brand);
-      text-align: center;
-      font-size: 2rem;
-      margin: 0 0 0.75rem 0;
-      letter-spacing: 0.2px;
-    }
-
-    p {
-      line-height: 1.6;
-      margin: 0.5rem 0 1rem 0;
+        color: var(--brand);
+        text-align: center;
     }
 
     .btn {
-      display: inline-block;
-      background: var(--brand);
-      color: #fff;
-      border: 0;
-      border-radius: 10px;
-      padding: 0.65rem 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
-      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+        background: var(--brand);
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 8px;
+        cursor: pointer;
     }
 
     .btn:hover {
-      transform: translateY(-1px);
-      background: #1d4ed8;
-      box-shadow: 0 10px 22px rgba(29, 78, 216, 0.28);
+        background: #1d4ed8;
     }
+    `);
 
-    .badge {
-      display: inline-block;
-      padding: 0.15rem 0.5rem;
-      border-radius: 999px;
-      background: #eef2ff;
-      color: #3730a3;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: .2px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <span class="badge">CSS</span>
-    <h1>Olá com CSS!</h1>
-    <p>Edite o CSS dentro da tag <strong>&lt;style&gt;</strong> ou o HTML aqui no editor para ver mudanças ao vivo.</p>
-    <button class="btn">Botão estiloso</button>
-  </div>
-</body>
-</html>`);
 
     return (
         <main className="bg-amber-50 bg-[url('/icone-html-noir.png')] bg-contain bg-center bg-no-repeat bg-blend-overlay min-h-screen">
@@ -721,21 +689,38 @@ h1 {
       </div>
            {/* 💻 COLUNA DIREITA – Editor + Preview */}
         <section className="w-full lg:w-1/2 p-6 md:p-8 lg:sticky lg:top-20 lg:h-screen overflow-y-auto backdrop-blur-sm">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+        <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <CodeIcon size={24} /> Teste você mesmo:
-          </h2>
+        </h2>
 
-          {/* Editor */}
-          <CodeEditor code={htmlCode} onChange={setHtmlCode} />
+        {/* Editor de HTML */}
+        <p className="font-semibold mb-2">🌐 HTML:</p>
+        <CodeEditor code={htmlCode} onChange={setHtmlCode} language="html" />
 
-          {/* Preview */}
-          <h3 className="mt-6 font-semibold text-lg">Pré-visualização:</h3>
-          <iframe
+        {/* Editor de CSS */}
+        <p className="font-semibold mt-6 mb-2">🎨 CSS:</p>
+        <CodeEditor code={cssCode} onChange={setCssCode} language="css" />
+
+        {/* Preview */}
+        <h3 className="mt-6 font-semibold text-lg">🖥 Pré-visualização:</h3>
+        <iframe
             className="w-full h-64 mt-2 border rounded-lg bg-white"
-            srcDoc={htmlCode}
+            srcDoc={`
+            <html>
+                <head>
+                <style>
+                    ${cssCode}
+                </style>
+                </head>
+                <body>
+                ${htmlCode}
+                </body>
+            </html>
+            `}
             title="Preview do Código"
-          />
-        </section>       
+        />
+        </section>
+  
       </div>
             <footer>
                 <Footer/>

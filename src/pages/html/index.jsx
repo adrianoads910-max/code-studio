@@ -1017,7 +1017,7 @@ Click me to display Date and Time.</button>
           </h2>
 
           {/* Editor */}
-          <CodeEditor code={htmlCode} onChange={setHtmlCode} />
+          <CodeEditor code={htmlCode} onChange={setHtmlCode} language="html" />
 
           {/* Preview */}
           <h3 className="mt-6 font-semibold text-lg">Pré-visualização:</h3>
