@@ -463,7 +463,259 @@ h1 {
         </p>
         </section>
 
+        {/* 🧱 NOVA SEÇÃO: Display e tipos de elementos */}
+        <h3 className="text-2xl font-semibold mt-10 mb-4">🧱 Display: block, inline e inline-block</h3>
+        
+        <p className="mb-3">
+            O <strong>display</strong> define como um elemento é mostrado na tela. Os mais usados são:
+        </p>
 
+        <ul className="list-disc ml-6 space-y-2">
+            <li><strong>block:</strong> ocupa toda a largura disponível e quebra linha (ex: div, h1, p).</li>
+            <li><strong>inline:</strong> não quebra linha e só ocupa o tamanho do conteúdo (ex: span, a).</li>
+            <li><strong>inline-block:</strong> fica na mesma linha, mas permite definir altura e largura.</li>
+        </ul>
+
+        {/* 🎯 Introdução ao Flexbox */}
+        <h3 className="text-2xl font-semibold mt-10 mb-4">📦 Flexbox (display: flex)</h3>
+        <p className="mb-3">
+        O <strong>Flexbox</strong> é um modo de layout no CSS que facilita organizar, alinhar e distribuir elementos dentro de um <code>div</code> (container).
+        Ele é ativado com <code>display: flex;</code>.
+        </p>
+
+        {/* ✅ Conceito de Container e Itens Flex */}
+        <p className="font-semibold mt-4">📌 Conceitos básicos:</p>
+        <ul className="list-disc ml-6 space-y-2">
+        <li><strong>Flex container:</strong> o elemento pai que utiliza <code>display: flex;</code>.</li>
+        <li><strong>Flex items:</strong> os elementos filhos dentro do container.</li>
+        <li><strong>Eixo principal (main axis):</strong> pode ser horizontal ou vertical.</li>
+        <li><strong>Alinhamentos fáceis:</strong> centralizar, espaçar, organizar em linha ou coluna.</li>
+        </ul>
+
+        {/* 💻 Exemplo de Flexbox */}
+        <h4 className="font-bold text-lg mt-6 mb-2">💻 Exemplo de Flexbox:</h4>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`div.container {
+        display: flex;          /* Ativa o Flexbox */
+        gap: 10px;              /* Espaço entre os itens */
+        justify-content: center;/* Alinha itens no eixo principal */
+        align-items: center;    /* Alinha itens no eixo cruzado */
+        }
+
+        div.item {
+        background: #38bdf8;
+        padding: 20px;
+        border-radius: 8px;
+        }`}
+        </pre>
+
+        {/* 🔍 Visualização prática */}
+        <div className="mt-6 p-4 bg-white border rounded-lg shadow-sm">
+        <p className="font-semibold text-center mb-4">📊 Visualização:</p>
+        <div className="flex gap-4 justify-center items-center">
+            <div className="bg-blue-300 p-4 rounded-lg">1</div>
+            <div className="bg-blue-300 p-4 rounded-lg">2</div>
+            <div className="bg-blue-300 p-4 rounded-lg">3</div>
+        </div>
+        </div>
+
+        {/* 🔁 Direções no Flexbox */}
+        <h4 className="font-bold text-lg mt-6 mb-2">🔁 Direção dos itens:</h4>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`flex-direction: row;        /* Padrão: itens em linha */
+        flex-direction: column;     /* Itens em coluna */
+        flex-direction: row-reverse;/* Linha invertida */
+        flex-direction: column-reverse; /* Coluna invertida */`}
+        </pre>
+
+        {/* 🎯 Espaçamento com justify-content */}
+        <h4 className="font-bold text-lg mt-6 mb-2">🎯 Alinhamento horizontal (justify-content):</h4>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`justify-content: flex-start;   /* Esquerda */
+        justify-content: center;       /* Centro */
+        justify-content: space-between;/* Espaço entre os itens */
+        justify-content: space-around; /* Espaço ao redor */`}
+        </pre>
+
+        {/* 🎯 Alinhamento vertical */}
+        <h4 className="font-bold text-lg mt-6 mb-2">📍 Alinhamento vertical (align-items):</h4>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`align-items: flex-start;  /* Topo */
+        align-items: center;      /* Centro vertical */
+        align-items: flex-end;    /* Base */`}
+        </pre>
+
+        <p className="text-md mt-6">
+        ✅ <strong>Dica:</strong> Flexbox é perfeito para centralizar elementos no meio da tela:
+        </p>
+
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`.center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* tela inteira */
+        }`}
+        </pre>
+
+        {/* 🧩 Introdução ao CSS Grid */}
+        <h2 className="text-2xl font-bold mt-10 mb-4">🧩 Layout com CSS Grid</h2>
+        <p className="mb-3">
+        O <strong>CSS Grid</strong> é um sistema poderoso de layout bidimensional — ou seja, permite organizar elementos em <strong>linhas e colunas</strong> com facilidade.
+        </p>
+
+        {/* ✅ Conceitos básicos */}
+        <ul className="list-disc ml-6 space-y-2">
+        <li><strong>Grid Container:</strong> o elemento pai que recebe <code>display: grid;</code></li>
+        <li><strong>Grid Items:</strong> os elementos (filhos) que ficam dentro do grid</li>
+        <li><strong>Linhas & Colunas:</strong> definidas com <code>grid-template-rows</code> e <code>grid-template-columns</code></li>
+        <li><strong>Gap:</strong> espaçamento entre os elementos da grade</li>
+        </ul>
+
+        {/* 💻 Exemplo básico */}
+        <h3 className="text-xl font-semibold mt-6 mb-3">💻 Exemplo básico de Grid:</h3>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`/* Container (pai) */
+        .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* 3 colunas iguais */
+        gap: 10px; /* Espaço entre os itens */
+        }
+
+        /* Itens (filhos) */
+        .item {
+        background-color: #38bdf8;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        }`}
+        </pre>
+
+        {/* ✅ Visualização com Tailwind */}
+        <div className="mt-6 p-4 bg-white border rounded-lg shadow-sm">
+        <p className="font-semibold text-center mb-3">📊 Exemplo visual:</p>
+        <div className="grid grid-cols-3 gap-4">
+            <div className="bg-blue-300 p-4 rounded-lg text-center">1</div>
+            <div className="bg-blue-300 p-4 rounded-lg text-center">2</div>
+            <div className="bg-blue-300 p-4 rounded-lg text-center">3</div>
+            <div className="bg-blue-300 p-4 rounded-lg text-center">4</div>
+            <div className="bg-blue-300 p-4 rounded-lg text-center">5</div>
+            <div className="bg-blue-300 p-4 rounded-lg text-center">6</div>
+        </div>
+        </div>
+
+        {/* 🎯 Colunas com tamanhos diferentes */}
+        <h3 className="font-bold text-lg mt-6 mb-2">🎯 Colunas com tamanhos diferentes</h3>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`grid-template-columns: 200px 1fr 2fr;
+        /* 1ª coluna fixa (200px)
+        2ª flexível (ocupa o que sobrar)
+        3ª coluna ocupa o dobro da 2ª */`}
+        </pre>
+
+        {/* 🔁 Organizando com linhas */}
+        <h3 className="font-bold text-lg mt-6 mb-2">📍 Linhas (grid-template-rows)</h3>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`grid-template-rows: 100px 100px auto;
+        /* Primeiras duas linhas com altura fixa, a última ocupa o resto */`}
+        </pre>
+
+        {/* 📌 Item ocupando mais colunas */}
+        <h3 className="font-bold text-lg mt-6 mb-2">📌 Item ocupando mais colunas (grid-column)</h3>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`.item1 {
+        grid-column: span 2; /* Esse item ocupa 2 colunas */
+        }`}
+        </pre>
+
+        {/* ✅ Dica */}
+        <p className="mt-4">
+        ✅ <strong>Dica:</strong> O Grid é perfeito para criar layouts de páginas, dashboards e galerias de forma organizada e responsiva.
+        </p>
+
+            
+       {/* 📂 Seção: Forms no CSS */}
+        <h2 className="text-2xl font-bold mt-10 mb-4">📝 Estilizando Formulários com CSS</h2>
+        <p className="mb-3">
+        Formulários são essenciais em qualquer site. Com CSS, podemos deixar inputs, botões e labels mais bonitos e fáceis de usar.
+        </p>
+
+        {/* 💻 Exemplo básico de formulário */}
+        <h3 className="text-xl font-semibold mt-6 mb-3">💡 Exemplo básico:</h3>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`<form>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" placeholder="Digite seu nome">
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" placeholder="Digite seu e-mail">
+
+        <button type="submit">Enviar</button>
+        </form>`}
+        </pre>
+
+        {/* 🎨 Estilo CSS aplicado */}
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm mt-3">
+        {`form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        max-width: 300px;
+        }
+
+        input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        transition: 0.3s;
+        }
+
+        /* Efeito ao clicar no input (focus) */
+        input:focus {
+        border-color: #3b82f6; /* azul */
+        outline: none;
+        box-shadow: 0 0 4px #60a5fa;
+        }
+
+        button {
+        background-color: #3b82f6;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        }
+
+        button:hover {
+        background-color: #2563eb;
+        }` }
+        </pre>
+
+        {/* ✅ Estilização visual com Tailwind (opcional) */}
+        <div className="mt-6 p-4 bg-white border rounded-lg shadow-sm">
+        <p className="font-semibold">📌 Visual do formulário:</p>
+        <form className="flex flex-col gap-3 max-w-sm">
+            <label htmlFor="nome">Nome:</label>
+            <input className="p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" type="text" id="nome" placeholder="Digite seu nome" />
+
+            <label htmlFor="email">E-mail:</label>
+            <input className="p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" type="email" id="email" placeholder="Digite seu e-mail" />
+
+            <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 rounded-lg">Enviar</button>
+        </form>
+        </div>
+
+        {/* 🔍 Extras: estilização de input types */}
+        <h3 className="text-xl font-semibold mt-8 mb-3">🎯 Outros tipos de input:</h3>
+        <pre className="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto text-sm">
+        {`input[type="checkbox"] { accent-color: #3b82f6; }      /* Muda cor do checkbox */
+        input[type="radio"]    { accent-color: #f97316; }      /* Radio laranja */
+        input[type="range"]    { width: 100%; }                /* Slider */`}
+        </pre>
+
+        <p className="mt-4">
+        ✅ <strong>Dica:</strong> Você pode combinar <code>:focus</code>, <code>:hover</code>, <code>:valid</code> e <code>:invalid</code> para criar formulários interativos e acessíveis.
+        </p>
 
 
       </div>

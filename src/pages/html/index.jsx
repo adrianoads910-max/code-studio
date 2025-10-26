@@ -158,9 +158,9 @@ export const HtmlPage = () => {
               </li>
               <strong>Exemplo:</strong>
               <pre className="bg-gray-900 text-white p-4 rounded-lg text-sm overflow-x-auto">
-{`<h1>Título Principal</h1>
-<h2>Subtítulo</h2>
-<h3>Seção menor</h3>`}
+                    {`<h1>Título Principal</h1>
+                    <h2>Subtítulo</h2>
+                    <h3>Seção menor</h3>`}
               </pre>
 
               {/* p */}
